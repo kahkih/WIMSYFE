@@ -17,7 +17,7 @@ export class ItemService {
 
   public create (item: Item): Observable<Item> {
     return this.http.post<Item>(
-      '${environment.wimsyUrl}/item', 
+      `${environment.wimsyUrl}/item`, 
       item,
       this.httpOptions
     )
@@ -26,5 +26,13 @@ export class ItemService {
   public retrieveAll(): Observable<Item[]> {
     return this.http.get<Item[]>(
       `${environment.wimsyUrl}/item`);
+  }
+
+  public update (item: Item): Observable<Item> {
+    return this.http.put<Item>(
+      `${environment.wimsyUrl}/item`, 
+      item,
+      this.httpOptions
+    )
   }
 }

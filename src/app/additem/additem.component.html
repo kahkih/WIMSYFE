@@ -1,0 +1,19 @@
+<div *ngIf="item">
+    <form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
+        Id: <input [(ngModel)]="item.id" #id="ngModel" name="id" required>
+        <pre>
+                Id Valid  :  {{id.valid}}
+                Id Touched:  {{id.touched}}
+                Id Dirty  :  {{id.dirty}}
+          </pre>
+        <br>Name: input [(ngModel)]="item.name" name="name" required>
+        <br>Description: <input [(ngModel)]="item.description" name="description" required>
+
+        <!-- <pre>{{formulier.value|json}}</pre> -->
+        <!-- <pre>{{auto|json}}</pre> -->
+
+        <br>
+        <input type="submit" value="Wijzigen" [disabled]="formulier.invalid">
+    </form>
+</div>
+<hr>

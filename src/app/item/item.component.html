@@ -1,10 +1,19 @@
-<table>
+<div *ngIf="items">
+    <!-- Id: {{item.id }} -->
+    <!-- <br>Id: <input [(ngModel)]="items.id" name="id" type="number" required> -->
+    <br>Name: <input [(ngModel)]="items.name" name="name" type="text" required>
+    <br>Description: <input [(ngModel)]="items.description" name="description" type="text" required>
+    <br><br>
+    <br><button (click)="addItem()">Add</button>
+</div>
+<hr>
+
+<table align="center">
     <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Description</th>
     </tr>
-    <!-- <p>{{ items |json }}</p> -->
     <tr *ngFor="let item of items">
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>

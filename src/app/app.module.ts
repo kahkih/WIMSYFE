@@ -9,6 +9,8 @@ import { MainmenuComponent } from './menus/mainmenu/mainmenu.component';
 import { ErrormessageComponent } from './system/errormessage/errormessage.component';
 import { InfomessageComponent } from './system/infomessage/infomessage.component';
 import { ItemComponent } from './item/item.component';
+import { OverviewComponent } from './overview/overview.component';
+import { AdditemComponent } from './additem/additem.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ItemComponent } from './item/item.component';
     MainmenuComponent,
     ErrormessageComponent,
     InfomessageComponent,
-    ItemComponent
+    ItemComponent,
+    OverviewComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,
