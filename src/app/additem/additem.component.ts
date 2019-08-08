@@ -3,6 +3,7 @@ import { Item } from '../domain/item';
 import { ItemService } from '../services/item.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router, NavigationEnd } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-additem',
@@ -12,25 +13,33 @@ import { Router, NavigationEnd } from '@angular/router';
 
 export class AdditemComponent implements OnInit {
 
-  additem: Item[];
+  addItem: Item;
 
-  navigationSubscription: any;
+  // navigationSubscription: any;
+  // http: any;
 
-  constructor(private itemService: ItemService) { }
+  constructor(private additemService: ItemService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  // addItem (){
-  //   // console.log (formulier.value);
-  //   this.itemService.create(this.addItem).subscribe(
-  //     (addItem: Item) => this.addItem = addItem,
-  //     (fout: HttpErrorResponse) =>
-  //       alert("Er is een fout opgetreden: " +
-  //         fout.error.error.status + " " + fout.error.error + "\n" +
-  //         "\nMessage:\n" + fout.error.message
-  //       )
-  //       // ()=> this.router.navigate(['addItem'] )
-  //   )
-  // }
+  addItemToForm(addItemForm: NgForm){
+    // console.log (this.additem.itemName);
+    this.addItem = new Item(addItemForm.value.name, addItemForm.value.description)
+    console.log(this.addItem.itemName);
+    console.log(this.addItem.itemDescription);
+    // console.log(this.addItem.description);
+    this.additemService.create(this.addItem).subscribe(
+      (additem: Item) => this.addItem = additem,
+
+      (fout: HttpErrorResponse) =>
+        alert("Er is een fout opgetreden: " +
+          fout.error.error.status + " " + fout.error.error + "\n" +
+          "\nMessage:\n" + fout.error.message
+        )
+        // ()=> this.router.navigate(['items'] )
+    )
+  }
+
+  
 }

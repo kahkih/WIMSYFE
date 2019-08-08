@@ -1,0 +1,24 @@
+<div class="container">
+    <form #moveItemForm="ngForm" novalidate>
+        <div class="text-center">
+            <h2>Move stuff</h2>
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="moveItemForm.name" name="name" #name="ngModel">
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" required [(ngModel)]="moveItemForm.description" name="description" #description="ngModel">
+        </div>
+
+        <pre>{{moveItemForm.value|json}}</pre>
+
+        <br>
+        <button class="btn btn-success" (click)="moveItemFromForm(moveItemForm); moveItemForm.reset()" [disabled]="!moveItemForm.form.valid">Move Item</button>
+    </form>
+</div>

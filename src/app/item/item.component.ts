@@ -12,6 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ItemComponent implements OnInit {
   items: Item[];
 
+  updateItem: Item;
   item$: Observable<Item[]>;
 
   constructor(private itemService: ItemService) { }
@@ -25,22 +26,5 @@ export class ItemComponent implements OnInit {
         "\nMessage:\n" + error.error.message 
       )
     )
-    
   }
-
-  item : Item;
-
-  addItem (){
-    // console.log (formulier.value);
-    this.itemService.create(this.item).subscribe(
-      (item: Item) => this.item = item,
-      (fout: HttpErrorResponse) =>
-        alert("Er is een fout opgetreden: " +
-          fout.error.error.status + " " + fout.error.error + "\n" +
-          "\nMessage:\n" + fout.error.message
-        )
-        // ()=> this.router.navigate(['items'] )
-    )
-  }
-
 }

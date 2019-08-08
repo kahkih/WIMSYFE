@@ -11,6 +11,8 @@ import { InfomessageComponent } from './system/infomessage/infomessage.component
 import { ItemComponent } from './item/item.component';
 import { OverviewComponent } from './overview/overview.component';
 import { AdditemComponent } from './additem/additem.component';
+import { MoveitemComponent } from './moveitem/moveitem.component';
+import { FinditemComponent } from './finditem/finditem.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AdditemComponent } from './additem/additem.component';
     InfomessageComponent,
     ItemComponent,
     OverviewComponent,
-    AdditemComponent
+    AdditemComponent,
+    MoveitemComponent,
+    FinditemComponent,
   ],
   imports: [
     BrowserModule,

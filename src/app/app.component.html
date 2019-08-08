@@ -1,7 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="jumbotron jumbotron-fluid" style="text-align:center; background-color: black">
-    <img width="500" alt="WIMSY Logo" src="http://www.wimsy.com/images/logo.png">
+<div class="container text-light bg-dark h-100">
+    <div class="jumbotron jumbotron-fluid bg-dark container-fluid justify-content-center">
+        <div class="text-center">
+            <img width="500" alt="WIMSY Logo" src="http://www.wimsy.com/images/logo.png" class="img-fluid">
+            <h2>Overview of your Stuff</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <app-additem></app-additem>
+            </div>
+
+            <div class="col-2"></div>
+
+            <div class="col-5">
+                <app-moveitem></app-moveitem>
+            </div>
+        </div>
+    </div>
+    <app-item></app-item>
+    <router-outlet></router-outlet>
 </div>
-<h2 style="text-align: center">Overview of your Stuff</h2>
-<app-item></app-item>
-<router-outlet></router-outlet>

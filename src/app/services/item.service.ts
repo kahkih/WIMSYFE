@@ -15,24 +15,33 @@ export class ItemService {
 
   constructor(private http: HttpClient) { }
 
-  public create (item: Item): Observable<Item> {
-    return this.http.post<Item>(
-      `${environment.wimsyUrl}/item`, 
-      item,
-      this.httpOptions
-    )
-  }
-
   public retrieveAll(): Observable<Item[]> {
     return this.http.get<Item[]>(
       `${environment.wimsyUrl}/item`);
   }
 
-  public update (item: Item): Observable<Item> {
+  
+  public update(moveItem: Item): Observable<Item> {
     return this.http.put<Item>(
-      `${environment.wimsyUrl}/item`, 
-      item,
+      `${environment.wimsyUrl}/item` + `/${name}` + `/${moveItem.itemDescription}`, 
+      moveItem,
       this.httpOptions
     )
   }
+
+  public findbyName(findItem: Item): Observable<Item> {
+    return this.http.get<Item>(
+      `${environment.wimsyUrl}/item` + `/${findItem.itemName}`
+    )
+  }
+  
+  public create(addItem: Item): Observable<Item> {
+    return this.http.post<Item>(
+      `${environment.wimsyUrl}/item`, 
+      addItem,
+      this.httpOptions
+    ).pipe();
+  }
+
+
 }

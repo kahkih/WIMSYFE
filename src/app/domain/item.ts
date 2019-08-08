@@ -1,14 +1,14 @@
 export class Item {
     constructor(
-        private _id: number,
-        private _name: string,
-        private _description: string
+        // private id: number,
+        private name: string,
+        private description: string
     ) {
 
     }
-    get id() : number {return this.id}
-get name() : string {return this.name}
-get description() : string {return this.description}
-set name(name: string) {this._name = name}
-set description(description: string) {this._description = description}
+    // get itemId() : number {return this.id}
+get itemName() : string {return this.name}
+get itemDescription() : string {return this.description}
+// set itemName(name: string) {this.name = name}
+// set itemDescription(description: string) {this.description = description}
 }
