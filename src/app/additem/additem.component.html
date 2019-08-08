@@ -1,19 +1,24 @@
-<div *ngIf="item">
-    <form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
-        Id: <input [(ngModel)]="item.id" #id="ngModel" name="id" required>
-        <pre>
-                Id Valid  :  {{id.valid}}
-                Id Touched:  {{id.touched}}
-                Id Dirty  :  {{id.dirty}}
-          </pre>
-        <br>Name: input [(ngModel)]="item.name" name="name" required>
-        <br>Description: <input [(ngModel)]="item.description" name="description" required>
-
-        <!-- <pre>{{formulier.value|json}}</pre> -->
-        <!-- <pre>{{auto|json}}</pre> -->
+<div class="container">
+    <form #addItemForm="ngForm" novalidate>
+        <div class="text-center">
+            <h2>Add stuff</h2>
+        </div>
 
         <br>
-        <input type="submit" value="Wijzigen" [disabled]="formulier.invalid">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="addItemForm.name" name="name" #name="ngModel">
+        </div>
+
+        <br>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" required [(ngModel)]="addItemForm.description" name="description" #description="ngModel">
+        </div>
+
+        <!-- <pre>{{addItemForm.value|json}}</pre> -->
+
+        <br>
+        <button class="btn btn-success" (click)="addItemToForm(addItemForm); addItemForm.reset()" [disabled]="!addItemForm.form.valid">Add Item</button>
     </form>
 </div>
-<hr>
