@@ -1,1 +1,34 @@
-<p>finditem works!</p>
+<div id="accordion">
+    <div class="card bg-secondary">
+        <div class="card-header" id="headingFind">
+            <h2 class="text-center" data-toggle="collapse" data-target="#collapseFind" aria-expanded="true" aria-controls="collapseFind">
+                Find Stuff
+            </h2>
+        </div>
+        <div id="collapseFind" class="collapse hide" aria-labelledby="headingFind" data-parent="#accordion">
+            <div class="card-body">
+
+                <div class="container">
+                    <form #findItemForm="ngForm" novalidate>
+                        <div class="text-center">
+                            <div *ngIf="findItem">
+                                {{findItem.name}} {{findItem.description}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" required [(ngModel)]="findItemForm.name" name="name" #name="ngModel">
+                        </div>
+                        <pre>{{findItemForm.value|json}}</pre>
+                        <br>
+                        <div class="text-center">
+                            <button class="btn btn-success" (click)="findItemFromForm(findItemForm); findItemForm.reset()" [disabled]="!findItemForm.form.valid">Find Item</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
