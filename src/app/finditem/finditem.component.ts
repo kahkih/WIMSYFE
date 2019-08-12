@@ -20,9 +20,9 @@ export class FinditemComponent implements OnInit {
   }
 
   findItemFromForm(findItemForm: any) {
-    console.log (findItemForm.value);
+    console.log (findItemForm.name);
     this.itemService.findbyName(findItemForm.value).subscribe({
-      // next: (findItem: Item) => this.findItem = findItem,
+      // next: (findItemForm: any) => findItemForm = findItemForm,
 
       error: (fout: HttpErrorResponse) =>
         alert("Er is een fout opgetreden: " +

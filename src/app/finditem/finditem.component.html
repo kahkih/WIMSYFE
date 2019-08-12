@@ -18,12 +18,13 @@
                         <pre>{{findItemForm.value|json}}</pre>
                         <br>
                         <div class="text-center">
-                            <button class="btn btn-success" (click)="findItemFromForm(findItemForm); findItemForm.reset()" [disabled]="!findItemForm.form.valid">Find Item</button>
+                            <button class="btn btn-success" (click)="findItemFromForm(findItemForm)" [disabled]="!findItemForm.form.valid">Find Item</button>
                         </div>
                     </form>
                 </div>
-                <div *ngIf="item">{{item.name}} {{item.description}}</div>
-
+                <div *ngIf="findItemForm.name">
+                    <h1>{{findItemForm.name}} {{findItemForm.description}}</h1>
+                </div>
             </div>
         </div>
     </div>
