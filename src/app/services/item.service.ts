@@ -21,17 +21,17 @@ export class ItemService {
   }
 
   
-  public update(moveItem: Item): Observable<Item> {
+  public update(moveItem: any): Observable<Item> {
     return this.http.put<Item>(
-      `${environment.wimsyUrl}/item` + `/${name}` + `/${moveItem.itemDescription}`, 
+      `${environment.wimsyUrl}/item` + `/${moveItem.name}` + `/${moveItem.description}`, 
       moveItem,
       this.httpOptions
     )
   }
 
-  public findbyName(findItem: Item): Observable<Item> {
+  public findbyName(findItem: any): Observable<Item> {
     return this.http.get<Item>(
-      `${environment.wimsyUrl}/item` + `/${findItem.itemName}`
+      `${environment.wimsyUrl}/item` + `/${findItem.name}`
     )
   }
   

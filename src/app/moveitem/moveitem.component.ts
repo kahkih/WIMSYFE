@@ -21,8 +21,8 @@ export class MoveitemComponent implements OnInit {
 
   moveItemFromForm(moveItemForm: any) {
     console.log (moveItemForm.value);
-    this.itemService.update(this.moveItem).subscribe({
-      next: (moveItem: Item) => this.moveItem = moveItem,
+    this.itemService.update(moveItemForm.value).subscribe({
+      // next: (moveItemForm: any) => this.moveItem = moveItem,
 
       error: (fout: HttpErrorResponse) =>
         alert("Er is een fout opgetreden: " +
