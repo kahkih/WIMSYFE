@@ -13,6 +13,8 @@ import { OverviewComponent } from './overview/overview.component';
 import { AdditemComponent } from './additem/additem.component';
 import { MoveitemComponent } from './moveitem/moveitem.component';
 import { FinditemComponent } from './finditem/finditem.component';
+import { ContainerComponent } from './container/container.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { FinditemComponent } from './finditem/finditem.component';
     AdditemComponent,
     MoveitemComponent,
     FinditemComponent,
+    ContainerComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
