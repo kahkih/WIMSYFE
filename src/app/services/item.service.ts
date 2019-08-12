@@ -21,9 +21,9 @@ export class ItemService {
   }
 
   
-  public update(moveItem: Item): Observable<Item> {
+  public update(moveItem: any): Observable<Item> {
     return this.http.put<Item>(
-      `${environment.wimsyUrl}/item` + `/${moveItem.itemName}` + `/${moveItem.itemDescription}`, 
+      `${environment.wimsyUrl}/item` + `/${moveItem.name}` + `/${moveItem.description}`, 
       moveItem,
       this.httpOptions
     )
