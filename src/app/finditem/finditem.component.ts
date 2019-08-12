@@ -21,8 +21,8 @@ export class FinditemComponent implements OnInit {
 
   findItemFromForm(findItemForm: any) {
     console.log (findItemForm.value);
-    this.itemService.findbyName(this.findItem=new Item(findItemForm.value.itemName, findItemForm.value.itemDescription)).subscribe({
-      next: (findItem: Item) => this.findItem = findItem,
+    this.itemService.findbyName(findItemForm.value).subscribe({
+      // next: (findItem: Item) => this.findItem = findItem,
 
       error: (fout: HttpErrorResponse) =>
         alert("Er is een fout opgetreden: " +

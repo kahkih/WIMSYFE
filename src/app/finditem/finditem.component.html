@@ -10,15 +10,10 @@
 
                 <div class="container">
                     <form #findItemForm="ngForm" novalidate>
-                        <div class="text-center">
-                            <div *ngIf="item">
-                                {{findItem.name}} {{findItem.description}}
-                            </div>
-                        </div>
                         <br>
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" required [(ngModel)]="item.name" name="name" #name="ngModel">
+                            <input type="text" class="form-control" id="name" required [(ngModel)]="findItemForm.name" name="name" #name="ngModel">
                         </div>
                         <pre>{{findItemForm.value|json}}</pre>
                         <br>

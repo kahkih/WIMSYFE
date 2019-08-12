@@ -23,7 +23,7 @@
                             <input type="text" class="form-control" id="description" required [(ngModel)]="moveItemForm.description" name="description" #description="ngModel">
                         </div>
 
-                        <pre>{{moveItemForm.value|json}}</pre>
+                        <!-- <pre>{{moveItemForm.value|json}}</pre> -->
 
                         <br>
                         <button class="btn btn-success" (click)="moveItemFromForm(moveItemForm); moveItemForm.reset()" [disabled]="!moveItemForm.form.valid">Move Item</button>
