@@ -3,6 +3,7 @@ import {Location} from '../domain/location';
 import{LocationService} from '../services/location.service';
 import{Observable} from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { FilterPipe } from 'ngx-filter-pipe';
 
 @Component({
   selector: 'app-location',
@@ -11,7 +12,14 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LocationComponent implements OnInit {
 
+  
+
   locations: Location[];
+
+  locationFilter: any = {locationName: ''};
+  locationFilterContainerName: any = {containerName: ''}
+  locationFilterItemName: any = {itemName: ''};
+
 
   location$: Observable<Location[]>;
 
