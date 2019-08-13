@@ -1,31 +1,32 @@
-<div class="container col">
+<div class="text-center">
     <div>
-        <table>
+        <div class="text-center">
             <!-- <input type="text" [(ngModel)]="locationFilter.locationName" placeholder="Input location"> -->
             <input type="text" [(ngModel)]="locationFilterItemName.itemName" placeholder="Find Stuff">
             <!-- <tr *ngFor="let location of locations | filterBy: locationFilter">{{ location.locationName }}</tr> -->
 
             <!-- <tr *ngIf="(location | filterBy: locationFilter).length === 0">No matching elements</tr> -->
-        </table>
+        </div>
     </div>
-    <table class="table table-dark table-hover">
-        <tr *ngFor="let location of locations">
-            <div>
-                <table class="container col">
-                    <tr *ngFor="let container of location.containersInLocation">
-                        <div>
-                            <table class="container col">
-                                <tr *ngFor="let item of container.itemsInContainer | filterBy: locationFilterItemName">
-                                    <td>{{location.locationName}}</td>
-                                    <td>{{container.containerName}}</td>
-                                    <td>{{item.itemName}}</td>
-                                </tr>
-                            </table>
+    <!-- <table class="table table-dark table-hover"> -->
+    <div *ngFor="let location of locations">
+        <div>
+            <div *ngFor="let container of location.containersInLocation">
+                <div>
+                    <div *ngFor="let item of container.itemsInContainer | filterBy: locationFilterItemName">
+                        <div class="tile">
+                            <div> {{location.locationName}}</div>
+                            <div>{{container.containerName}}</div>
+                            <div>{{item.itemName}}</div>
                         </div>
-                    </tr>
-                </table>
+                    </div>
+                </div>
             </div>
-        </tr>
-    </table>
+        </div>
+    </div>
+    <div class="clear-fix">
+
+    </div>
 </div>
+
 <router-outlet></router-outlet>

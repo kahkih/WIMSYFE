@@ -12,8 +12,6 @@ import { FilterPipe } from 'ngx-filter-pipe';
 })
 export class LocationComponent implements OnInit {
 
-  
-
   locations: Location[];
 
   locationFilter: any = {locationName: ''};
@@ -35,5 +33,7 @@ export class LocationComponent implements OnInit {
     )
   )
 }
+
+
 
 }
