@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpRequest, HttpResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, from} from 'rxjs';
 import {environment} from 'src/environments/environment';
-import{Location} from '../domain/location';
+import {Location} from '../domain/location';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +19,6 @@ export class LocationService {
     return this.http.get<Location[]>(
       `${environment.wimsyUrl}/`);
   }
+
 
 }
