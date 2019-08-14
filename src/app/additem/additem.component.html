@@ -13,13 +13,13 @@
                     <form #addItemForm="ngForm" novalidate>
                         <br>
                         <div class="form-group">
-                            <label for="itemName">Stuff Name:</label>
+                            <label for="itemName">Stuff name:</label>
                             <input type="text" class="form-control" id="itemName" required [(ngModel)]="addItemForm.itemName" name="itemName" #itemName="ngModel">
                         </div>
 
                         <br>
                         <div class="form-group">
-                            <label for="description">Stuff Description:</label>
+                            <label for="description">Stuff description:</label>
                             <input type="text" class="form-control" id="description" required [(ngModel)]="addItemForm.itemDescription" name="itemDescription" #itemDescription="ngModel">
                         </div>
 
@@ -36,7 +36,7 @@
                         </div>
 
                         <br>
-                        <button class="btn btn-success" (click)="addItemToForm(addItemForm); addItemForm.reset()" [disabled]="!addItemForm.form.valid">Add Item</button>
+                        <button class="btn btn-success container" (click)="addItemToForm(addItemForm); addItemForm.reset()" [disabled]="!addItemForm.form.valid">Add Stuff</button>
                     </form>
                 </div>
             </div>
