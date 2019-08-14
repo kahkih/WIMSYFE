@@ -1,12 +1,48 @@
 .tile {
     float: left;
-    width: 230px;
-    border-radius: 5px;
-    padding: 2px;
-    margin: 2px;
-    background: green;
+    width: 255px;
+    border-radius: 3px;
+    /* padding: 15px; */
+    margin: 11px;
+    /* background: #4A8DC4; */
+    /* background: #587EE8; */
+    background: #C97F18;
+    /* font-family: 'Shadows Into Light'; */
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Kalam';
+    font-size: 23px;
 }
 
 .clear-fix {
     clear: both;
+}
+
+input {
+    width: 270px;
+    height: 41px;
+    border-radius: 2px;
+}
+
+.header {
+    padding-top: 3px;
+}
+
+img {
+    width: 100%;
+}
+
+.image-container {
+    width: 255px;
+    height: 140px;
+    overflow: hidden;
+}
+
+.container-text {
+    font-size: 17px;
+    margin-top: 2px;
+}
+
+.location-text {
+    font-size: 17px;
+    margin-bottom: 2px;
 }

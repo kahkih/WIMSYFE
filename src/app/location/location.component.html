@@ -1,8 +1,13 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Kalam&display=swap');
+</style>
 <div class="text-center">
     <div>
         <div class="text-center">
-            <input type="text" [(ngModel)]="locationFilterItemName.itemName" placeholder="Find Stuff">
+            <input type="text" [(ngModel)]="locationFilterItemName.itemName" placeholder="  Find my stuff">
         </div>
+        <br>
+        <br>
     </div>
     <div *ngFor="let location of locations">
         <div>
@@ -10,9 +15,16 @@
                 <div>
                     <div *ngFor="let item of container.itemsInContainer | filterBy: locationFilterItemName">
                         <div class="tile">
-                            <div>{{location.locationName}}</div>
-                            <div>{{container.containerName}}</div>
-                            <div>{{item.itemName}}</div>
+                            <div class="header">{{item.itemName}}</div>
+                            <div class="image-container">
+                                <img src="assets\images\{{item.itemName}}.jpg" alt="">
+                            </div>
+                            <div class="container-text">
+                                {{container.containerName}}
+                            </div>
+                            <div class="location-text">
+                                {{location.locationName}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -20,8 +32,5 @@
         </div>
     </div>
     <div class="clear-fix">
-
     </div>
 </div>
-
-<router-outlet></router-outlet>
