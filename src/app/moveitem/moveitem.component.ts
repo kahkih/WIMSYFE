@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Item} from '../domain/item';
 import{ItemService} from '../services/item.service';
 import{Observable} from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Form } from '../domain/form';
+import { FormService } from '../services/form.service';
 
 @Component({
   selector: 'app-moveitem',
@@ -12,16 +13,16 @@ import { Router } from '@angular/router';
 })
 export class MoveitemComponent implements OnInit {
 
-  moveItem : Item;
+  moveForm : Form;
 
-  constructor(private itemService: ItemService, private router: Router) { }
+  constructor(private formService: FormService, private router: Router) { }
 
   ngOnInit() {
   }
 
   moveItemFromForm(moveItemForm: any) {
     console.log (moveItemForm.value);
-    this.itemService.update(moveItemForm.value).subscribe({
+    this.formService.update(moveItemForm.value).subscribe({
       // next: (moveItemForm: any) => this.moveItem = moveItem,
 
       error: (fout: HttpErrorResponse) =>

@@ -14,16 +14,22 @@
                         <br>
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" required [(ngModel)]="moveItemForm.name" name="name" #name="ngModel">
+                            <input type="text" class="form-control" id="name" required [(ngModel)]="moveItemForm.itemName" name="itemName" #itemName="ngModel">
                         </div>
 
                         <br>
                         <div class="form-group">
-                            <label for="description">Description:</label>
-                            <input type="text" class="form-control" id="description" required [(ngModel)]="moveItemForm.description" name="description" #description="ngModel">
+                            <label for="container">Container:</label>
+                            <input type="text" class="form-control" id="container" required [(ngModel)]="moveItemForm.containerName" name="containerName" #containerName="ngModel">
                         </div>
 
-                        <!-- <pre>{{moveItemForm.value|json}}</pre> -->
+                        <br>
+                        <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input type="text" class="form-control" id="location" required [(ngModel)]="moveItemForm.locationName" name="locationName" #locationName="ngModel">
+                        </div>
+
+                        <pre>{{moveItemForm.value|json}}</pre>
 
                         <br>
                         <button class="btn btn-success" (click)="moveItemFromForm(moveItemForm); moveItemForm.reset()" [disabled]="!moveItemForm.form.valid">Move Item</button>

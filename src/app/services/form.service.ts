@@ -25,7 +25,7 @@ export class FormService {
 
   public update(moveForm: any): Observable<Form> {
     return this.http.put<Form>(
-      `${environment.wimsyUrl}/` + `${moveForm.itemName}` + `/${moveForm.itemDescription}` + `/${moveForm.containerName}` + `/${moveForm.locationName}`, 
+      `${environment.wimsyUrl}/`, 
       moveForm,
       this.httpOptions
     )
