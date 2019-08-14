@@ -25,7 +25,7 @@ export class AdditemComponent implements OnInit {
 
   addItemToForm(addItemForm: NgForm){
     // console.log (this.additem.itemName);
-    this.addForm = new Form(addItemForm.value.itemName, addItemForm.value.itemDescription, addItemForm.value.containerName, addItemForm.value.locationName)
+    this.addForm = new Form(addItemForm.value.itemName, "", addItemForm.value.containerName, addItemForm.value.locationName)
     // console.log(this.addForm.getItemName);
     // console.log(this.addForm.getItemDescription);
     // console.log(this.addForm.getContainerName);
