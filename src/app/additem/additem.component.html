@@ -13,21 +13,32 @@
                     <form #addItemForm="ngForm" novalidate>
                         <br>
                         <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" required [(ngModel)]="addItemForm.name" name="name" #name="ngModel">
+                            <label for="itemName">Stuff Name:</label>
+                            <input type="text" class="form-control" id="itemName" required [(ngModel)]="addItemForm.itemName" name="itemName" #itemName="ngModel">
                         </div>
 
                         <br>
                         <div class="form-group">
-                            <label for="description">Description:</label>
-                            <input type="text" class="form-control" id="description" required [(ngModel)]="addItemForm.description" name="description" #description="ngModel">
+                            <label for="description">Stuff Description:</label>
+                            <input type="text" class="form-control" id="description" required [(ngModel)]="addItemForm.itemDescription" name="itemDescription" #itemDescription="ngModel">
+                        </div>
+
+                        <br>
+                        <div class="form-group">
+                            <label for="container">Container:</label>
+                            <input type="text" class="form-control" id="container" required [(ngModel)]="addItemForm.form.containerName" name="containerName" #containerName="ngModel">
+                        </div>
+
+                        <br>
+                        <div class="form-group">
+                            <label for="location">Location:</label>
+                            <input type="text" class="form-control" id="location" required [(ngModel)]="addItemForm.locationName" name="locationName" #locationName="ngModel">
                         </div>
 
                         <br>
                         <button class="btn btn-success" (click)="addItemToForm(addItemForm); addItemForm.reset()" [disabled]="!addItemForm.form.valid">Add Item</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

@@ -12,7 +12,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class ItemComponent implements OnInit {
   items: Item[];
 
-  updateItem: Item;
   item$: Observable<Item[]>;
 
   constructor(private itemService: ItemService) { }

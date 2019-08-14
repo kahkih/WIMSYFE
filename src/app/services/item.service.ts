@@ -17,13 +17,12 @@ export class ItemService {
 
   public retrieveAll(): Observable<Item[]> {
     return this.http.get<Item[]>(
-      `${environment.wimsyUrl}/item`);
+      `${environment.wimsyUrl}/`);
   }
 
-  
   public update(moveItem: any): Observable<Item> {
     return this.http.put<Item>(
-      `${environment.wimsyUrl}/item` + `/${moveItem.name}` + `/${moveItem.description}`, 
+      `${environment.wimsyUrl}/` + `/${moveItem.name}` + `/${moveItem.description}`, 
       moveItem,
       this.httpOptions
     )
@@ -31,13 +30,13 @@ export class ItemService {
 
   public findbyName(findItem: any): Observable<Item> {
     return this.http.get<Item>(
-      `${environment.wimsyUrl}/item` + `/${findItem.name}`
+      `${environment.wimsyUrl}/` + `/${findItem.name}`
     )
   }
   
   public create(addItem: Item): Observable<Item> {
     return this.http.post<Item>(
-      `${environment.wimsyUrl}/item`, 
+      `${environment.wimsyUrl}/`, 
       addItem,
       this.httpOptions
     ).pipe();

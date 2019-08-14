@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { OverviewComponent } from './overview/overview.component';
 import { AdditemComponent } from './additem/additem.component';
 import { MoveitemComponent } from './moveitem/moveitem.component';
 import { FinditemComponent } from './finditem/finditem.component';
+import { ContainerComponent } from './container/container.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +28,12 @@ import { FinditemComponent } from './finditem/finditem.component';
     AdditemComponent,
     MoveitemComponent,
     FinditemComponent,
+    ContainerComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
+    FilterPipeModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,

@@ -1,0 +1,12 @@
+.tile {
+    float: left;
+    width: 230px;
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+    background: green;
+}
+
+.clear-fix {
+    clear: both;
+}
